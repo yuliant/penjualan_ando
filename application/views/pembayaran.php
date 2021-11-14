@@ -58,6 +58,11 @@
 							<textarea class="form-control" name="alamat" id="alamat" rows="3" placeholder="Alamat Lengkap" required></textarea>
 						</div>
 
+						<div class="form-group">
+							<label>Catatan Pengiriman</label>
+							<textarea class="form-control" name="catatan_pengiriman" id="catatan_pengiriman" rows="3" placeholder="Catatan Pengiriman"></textarea>
+						</div>
+
 						</p>
 					<?php
 					} else {

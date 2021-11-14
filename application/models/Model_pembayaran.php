@@ -13,6 +13,7 @@ class Model_pembayaran extends CI_Model
 		$paket_ekspedisi = $this->input->post('paket_ekspedisi');
 		$berat_barang = $this->input->post('berat_barang');
 		$total_bayar = $this->input->post('total_bayar');
+		$catatan_pengiriman = $this->input->post('catatan_pengiriman');
 
 		$invoice = array(
 			'nama' => $nama,
@@ -31,7 +32,8 @@ class Model_pembayaran extends CI_Model
 			'ekspedisi' => $ekspedisi,
 			'paket_ekspedisi' => $paket_ekspedisi,
 			'berat_barang' => $berat_barang,
-			'total_bayar' => $total_bayar
+			'total_bayar' => $total_bayar,
+			'catatan_pengiriman' => $catatan_pengiriman
 		);
 		$this->db->insert('pembelian', $invoice);
 		$id_order = $this->db->insert_id();

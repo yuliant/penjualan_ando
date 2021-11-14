@@ -55,8 +55,8 @@ class Home extends CI_Controller
 			);
 
 			$this->cart->insert($data);
-			// redirect('#produk');
-			redirect('Home/detail_keranjang');
+			redirect('#produk');
+			// redirect('Home/detail_keranjang');
 		}
 	}
 	public function tambah_ke_keranjang_detail($kd_brg)
