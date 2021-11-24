@@ -44,9 +44,9 @@
 									<button type="submit" class="btn text-white" style="background-color: #000000;">
 										Login
 									</button>
-									<a href="#" class="btn btn-link">
+									<!-- <a href="#" class="btn btn-link">
 										Lupa Password?
-									</a>
+									</a> -->
 									<a href="<?= base_url('registrasi') ?>" class="btn btn-link">
 										Belum Punya Akun? Daftar?
 									</a>

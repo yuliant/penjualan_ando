@@ -188,11 +188,27 @@ class Home extends CI_Controller
 		$is_processed = $this->Model_pembayaran->index();
 		if ($is_processed) {
 			$this->cart->destroy();
+
+			$this->db->from('pembelian');
+			$this->db->order_by('id_order', 'desc');
+			$this->db->limit(1);
+			$data['query'] = $this->db->get()->row();
+
 			$data['judul'] = 'PROSES PESANAN';
 			$this->load->view('template/header', $data);
 			$this->load->view('proses_pesanan');
+
+			// redirect('home/cetak/' . $data['query']->id_order);
 		} else {
 			echo "Maaf, Pesanan anda gagal di proses!!";
 		}
+	}
+
+	public function cetak($id_order)
+	{
+		$data['judul'] = 'DETAIL INVOICE';
+		$data['pembayaran'] = $this->Model_pembayaran->ambil_id_order($id_order);
+		$data['pesanan'] = $this->Model_pembayaran->ambil_id_pesanan($id_order);
+		$this->load->view('admin/cetak_inv_pelanggan', $data);
 	}
 }

@@ -2,7 +2,7 @@
 	<div class="row">
 
 		<!-- //alamat dll -->
-		<div class="col-lg-4">
+		<div class="col-lg-6">
 			<div class="card">
 				<h5 class="card-header">
 					<?php
@@ -76,7 +76,7 @@
 		</div>
 
 		<!-- //merchens -->
-		<div class="col-lg-4">
+		<!-- <div class="col-lg-4">
 			<div class="card">
 				<h5 class="card-header">
 					<?php
@@ -120,10 +120,10 @@
 				?>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<!-- //total -->
-		<div class="col-lg-4">
+		<div class="col-lg-6">
 			<div class="card">
 				<h5 class="card-header">
 					<?php
@@ -146,21 +146,29 @@
 						<?php
 						$no_pengiriman = mt_rand(100000000, 999999999);
 						?>
+						<input type="hidden" name="id_user_data" value="<?= $this->session->userdata('id_user') ?>" />
 						<input type="hidden" name="no_pengiriman" value="<?= $no_pengiriman ?>" />
 						<input type="hidden" name="paket_ekspedisi" id="namapaket" />
 						<input type="hidden" name="berat_barang" id="berat" value="<?= $heavy_total ?>" />
 						<input type="hidden" name="total_bayar" id="totalsemua" />
 
-						<strong id="total"><?= "Rp. " . $grand_total ?></strong>
+						<!-- <strong id="total">
+							<?php //echo "Rp. " . $grand_total 
+							?></strong> -->
+						<strong id="total"><?= "Rp. " . number_format($grand_total, 0, ',', '.') . ",-" ?></strong>
+
+						<div class="alert alert-warning mt-2" role="alert">
+							<strong>Catatan: </strong>pembayaran ke kasir Max H+7 setelah fatur atau nota dicetak
+						</div>
 					</div>
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<label>Harga Ongkir:</label><br>
 						<strong id="kirim"></strong>
 					</div>
 					<div class="form-group">
 						<label>Total Yang Dibayar:</label><br>
 						<strong id="totalbayar"></strong>
-					</div>
+					</div> -->
 
 					<a href="<?= base_url('Home/detail_keranjang') ?>" class="btn btn-sm btn-danger">Kembali</a>
 					<button type="submit" class="btn btn-sm btn-primary">Pesan</button>

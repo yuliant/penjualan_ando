@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 14, 2021 at 03:58 AM
+-- Generation Time: Nov 24, 2021 at 11:24 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.2.34
 
@@ -43,8 +43,8 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`kd_brg`, `nm_brg`, `satuan`, `pcs`, `harga`, `gambar`, `stok`, `berat`) VALUES
-('1-173.01', 'ANDO MOONBEAR HITAM', 'ball', 12, 10000, '33.JPG', 116, 700),
-('1-173.02', 'HAWAII ABU', 'Ball', 12, 10000, '11.JPG', 116, 700),
+('1-173.01', 'ANDO MOONBEAR HITAM', 'ball', 12, 10000, '33.JPG', 109, 700),
+('1-173.02', 'HAWAII ABU', 'Ball', 12, 10000, '11.JPG', 112, 700),
 ('1-173.03', 'HAWAII GRAPE', 'Ball', 12, 10000, '12.JPG', 120, 700),
 ('1-173.04', 'HAWAII HIJAU', 'Ball', 12, 10000, '13.JPG', 120, 700),
 ('1-173.05', 'HAWAII HITAM', 'Ball', 12, 10000, '14.JPG', 120, 700),
@@ -90,9 +90,8 @@ CREATE TABLE `pembelian` (
 --
 
 INSERT INTO `pembelian` (`id_order`, `nama`, `alamat`, `telp`, `tgl_pesan`, `batas_bayar`, `status`, `no_pengiriman`, `ekspedisi`, `paket_ekspedisi`, `berat_barang`, `total_bayar`, `catatan_pengiriman`) VALUES
-(19, 'Universitas Muhammdiyah Sidoar', 'Kendal Pecabean Rt 03 Rw 01 Candi', '6281111111111', '2021-11-05 14:38:06', '2021-12-05 14:38:06', '1', '281869392', 'tiki', 'ECO(4)', 2100, 42000, NULL),
-(20, 'Universitas Muhammdiyah Sidoar', 'Kendal Pecabean Rt 03 Rw 01 Candi', '6281111111111', '2021-11-06 15:34:49', '2021-12-06 15:34:49', '1', '569672333', 'tiki', 'ECO(4)', 1400, 32000, NULL),
-(21, 'Universitas Muhammdiyah Sidoar', 'Kendal Pecabean Rt 03 Rw 01 Candi', '6281111111111', '2021-11-06 15:36:19', '2021-12-06 15:36:19', '1', '241485443', 'pos', 'Express Next Day Barang(1 HARI)', 1400, 43000, NULL);
+(1, 'Universitas Muhammdiyah Sidoar', 'Kendal Pecabean Rt 03 Rw 01 Candi', '6289695615256', '2021-11-25 06:18:33', '2021-12-25 06:18:33', '1', '644747064', NULL, '', 1400, 0, 'Flash'),
+(2, 'Universitas Muhammdiyah Sidoar', 'Kendal Pecabean Rt 03 Rw 01 Candi', '6289695615256', '2021-11-25 06:22:55', '2021-12-25 06:22:55', '1', '482331339', NULL, '', 700, 0, '');
 
 -- --------------------------------------------------------
 
@@ -115,12 +114,8 @@ CREATE TABLE `pesanan` (
 --
 
 INSERT INTO `pesanan` (`id_pesan`, `id_order`, `kd_brg`, `nm_brg`, `satuan`, `jumlah`, `harga`) VALUES
-(29, 19, '1-173.05', 'ANDO MOONBEAR HITAM', NULL, 1, 10000),
-(30, 19, '1-173.06', 'HAWAII ABU', NULL, 2, 10000),
-(31, 20, '1-173.01', 'ANDO MOONBEAR HITAM', NULL, 1, 10000),
-(32, 20, '1-173.02', 'HAWAII ABU', NULL, 1, 10000),
-(33, 21, '1-173.01', 'ANDO MOONBEAR HITAM', NULL, 1, 10000),
-(34, 21, '1-173.02', 'HAWAII ABU', NULL, 1, 10000);
+(1, 1, '1-173.01', 'ANDO MOONBEAR HITAM', NULL, 2, 10000),
+(2, 2, '1-173.01', 'ANDO MOONBEAR HITAM', NULL, 1, 10000);
 
 --
 -- Triggers `pesanan`
@@ -157,10 +152,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `nama_usaha`, `nama`, `alamat`, `no_telp`, `no_npwp`, `role_id`) VALUES
 (1, 'admin', 'admin', 'Kafe', 'Istana Kafe', 'Sidoarjo', '0899899289', '655277769901', 1),
-(2, 'fanani', 'fanani', 'pt garuda food', 'fanani', 'pasuruan', '0321 00029', '2993988299', 2),
-(3, 'achsa', 'achsa', 'cafe', 'achsa cafe', 'Suko', '085748210484', '12345678', 2),
-(4, 'rachmad', 'rachma', 'hotel', 'rachmad hotel', 'sidoarjo', '085777888777', '12345678', 2),
-(5, 'rachmad', 'rachma', 'hotel', 'rachmad hotel', 'suko', '085666777888', '1234568', 2);
+(2, 'fanani', 'fanani', 'pt garuda food', 'fanani', 'pasuruan', '0321 00029', '2993988299', 2);
 
 --
 -- Indexes for dumped tables
@@ -198,19 +190,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `pembelian`
 --
 ALTER TABLE `pembelian`
-  MODIFY `id_order` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_order` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

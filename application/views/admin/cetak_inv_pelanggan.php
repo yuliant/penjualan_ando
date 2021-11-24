@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
@@ -36,7 +35,7 @@
 		No. Pelanggan : </br>
 	</div>
 	<div class="col mx-5" align="center" style="margin-top: 80px;">
-		<b>NOTA PENJUALAN</b></br>
+		<b>NOTA PEMBELIAN</b></br>
 		<div>No. Nota : <?= $pembayaran->id_order ?></div>
 		</br>
 		</br>
@@ -55,6 +54,8 @@
 		</br>
 		Tgl Kirim : <?php $tgl = date('d-m-Y');
 					echo $tgl; ?>
+		<hr>
+		Catatan Pengiriman : <br><?= $pembayaran->catatan_pengiriman ?>
 	</div>
 </div>
 <table class="container">
@@ -122,6 +123,15 @@
 		</div>
 	</div>
 </table>
+<br>
+<br>
+<div class="row">
+	<div class="col">
+		<td>
+			<b>Catatan: pembayaran ke kasir Max H+7 setelah fatur atau nota dicetak</b>
+		</td>
+	</div>
+</div>
 </div>
 <script>
 	window.print();
